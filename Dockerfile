@@ -42,10 +42,11 @@ RUN apt-get -qqy update \
     && apt install -qqy --no-install-recommends ./google-chrome-stable_current_amd64.deb \
     && apt-add-repository ppa:remmina-ppa-team/remmina-next \
     && apt update \
+    && apt install snapd \
+    && apt-get update \
     && sudo apt install -y docker.io \
     && sudo snap install -y docker \
     && apt install -qqy --no-install-recommends remmina remmina-plugin-rdp remmina-plugin-secret \
-    && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
     && apt install unzip \
