@@ -42,7 +42,7 @@ RUN apt-get -qqy update \
     && apt install -qqy --no-install-recommends ./google-chrome-stable_current_amd64.deb \
     && apt-add-repository ppa:remmina-ppa-team/remmina-next \
     && apt-get update
-RUN sudo apt-get install \
+RUN sudo apt-get -y install \
     ca-certificates \
     curl \
     gnupg \
