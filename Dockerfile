@@ -1,4 +1,4 @@
-KiFROM jrei/systemd-ubuntu
+FROM jrei/systemd-ubuntu
 
 
 # INSTALL PYTHON
