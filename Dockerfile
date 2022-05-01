@@ -45,7 +45,7 @@ RUN apt-get -qqy update \
     && apt install -y snapd \
     && apt-get update \
     && sudo apt install -y docker.io \
-    && sudo snap install -y docker \
+    && sudo snap install docker \
     && apt install -qqy --no-install-recommends remmina remmina-plugin-rdp remmina-plugin-secret \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
