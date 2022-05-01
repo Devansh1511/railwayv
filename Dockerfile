@@ -41,11 +41,18 @@ RUN apt-get -qqy update \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
     && apt install -qqy --no-install-recommends ./google-chrome-stable_current_amd64.deb \
     && apt-add-repository ppa:remmina-ppa-team/remmina-next \
+    && apt-get update
+RUN sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \> \
+    && echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null \
     && apt-get update \
-    && apt install -y snapd \
-    && apt-get update \
-    && sudo apt install -y docker.io \
-    && sudo snap install docker \
+    && sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin \
     && apt install -qqy --no-install-recommends remmina remmina-plugin-rdp remmina-plugin-secret \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
