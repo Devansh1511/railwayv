@@ -1,6 +1,6 @@
-FROM ubuntu:latest as ubuntu-base
+FROM ubuntu:20.04 as ubuntu-base
 
-RUN docker run --privileged -t -i --rm ubuntu:latest bash
+RUN docker run --privileged -t -i --rm ubuntu:20.04 bash
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NONINTERACTIVE_SEEN=true
