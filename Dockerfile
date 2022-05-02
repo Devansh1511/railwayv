@@ -1,3 +1,5 @@
+RUN docker run --privileged -t -i --rm ubuntu:latest bash
+
 FROM jrei/systemd-ubuntu as ubuntu-base
 
 ENV DEBIAN_FRONTEND=noninteractive \
