@@ -1,6 +1,5 @@
 FROM ubuntu:20.04 as ubuntu-base
 
-RUN docker run --privileged -t -i --rm ubuntu:20.04 bash
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NONINTERACTIVE_SEEN=true
@@ -90,3 +89,4 @@ RUN apt-get update -qqy \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+RUN docker run --privileged -t -i --rm ubuntu:20.04 bash
